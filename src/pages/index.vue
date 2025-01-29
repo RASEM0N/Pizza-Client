@@ -25,7 +25,7 @@ const { data } = await useApiFetch<IProductCategory[]>('/api/category', {
 
 watch(
 	() => route.query,
-	(value) => {
+	(value, prevValue) => {
 		// @TODO загружаем контент по новой
 	},
 );
