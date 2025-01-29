@@ -1,15 +1,17 @@
 <script setup lang="ts">
-// @TODO перенести в виджеты или куда-то в другое место
 import ProductFilterCheckbox from './ProductFilterCheckbox.vue';
-import ProductFilterCheckboxGroup from './ProductFilterCheckboxGroup.vue';
+import ProductFilterCheckboxGroup from './ProductFilterIngredients.vue';
+import { MIN_PRICE, MAX_PRICE } from '../model/const';
 
-// @TODO все числовые значения должны приходить с бэка
-// не должно быть захардкодено
-
-// @TODO Slider при скролле выше шапки становится по композиции
+// @TODO
+// - все числовые значения должны приходить с бэка
+// - не должно быть захардкодено
+// - еренести в виджеты или куда-то в другое место
+// - Slider при скролле выше шапки становится по композиции
+// - ProductFilterCheckbox перенести в виджеты или куда-то в другое место
 
 const { t } = useI18n();
-const price = ref([0, 30000]);
+const price = ref([MIN_PRICE, MAX_PRICE]);
 </script>
 <template>
 	<div>
@@ -17,11 +19,12 @@ const price = ref([0, 30000]);
 			{{ t('product_filter.name') }}
 		</UiTitle>
 		<div class="flex flex-col gap-4">
-			<ProductFilterCheckbox
-				:text="t('product_filter.status.can_collect')"
-				value="1"
-			/>
-			<ProductFilterCheckbox :text="t('product_filter.status.new')" value="2" />
+			<ProductFilterCheckbox :checked="false">
+        {{ t('product_filter.status.can_collect') }}
+      </ProductFilterCheckbox>
+			<ProductFilterCheckbox :checked="false">
+        {{ t('product_filter.status.new') }}
+      </ProductFilterCheckbox>
 		</div>
 
 		<div class="mt-5 border-y border-y-neutral-100 py-6 pb-7">
@@ -39,60 +42,6 @@ const price = ref([0, 30000]);
 			<UiSlider :min="0" :max="5000" :step="10" :model-value="price" />
 		</div>
 
-		<ProductFilterCheckboxGroup
-			class="mt-5"
-			title="Формат"
-			:limit="6"
-			:items="[
-				{
-					text: 'Сырный соус',
-					value: '1',
-				},
-				{
-					text: 'Моццарелла',
-					value: '2',
-				},
-				{
-					text: 'Чеснок',
-					value: '3',
-				},
-				{
-					text: 'Солённые огурчики',
-					value: '4',
-				},
-				{
-					text: 'Красный лук',
-					value: '5',
-				},
-				{
-					text: 'Томаты',
-					value: '6',
-				},
-				{
-					text: 'Сырный соус',
-					value: '7',
-				},
-				{
-					text: 'Моццарелла',
-					value: '8',
-				},
-				{
-					text: 'Чеснок',
-					value: '9',
-				},
-				{
-					text: 'Солённые огурчики',
-					value: '10',
-				},
-				{
-					text: 'Красный лук',
-					value: '11',
-				},
-				{
-					text: 'Томаты',
-					value: '12',
-				},
-			]"
-		/>
+		<ProductFilterCheckboxGroup class="mt-5" :limit="6" />
 	</div>
 </template>

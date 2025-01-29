@@ -13,11 +13,26 @@ import {
 // @TODO проверить что загружается на бэке
 // сюда еще body на основе текущего query надо передавать
 
-const { data } = await useApiFetch<IProductCategory[]>('/api/category', {
-	// @TODO
-	query: {},
-});
 const { t } = useI18n();
+const route = useRoute();
+
+// @TODO чето не изменяется
+const { data } = await useApiFetch<IProductCategory[]>('/api/category', {
+	query: {
+		ingredients: route.query.ingredients,
+	},
+});
+
+watch(
+	() => route.query,
+	(value) => {
+		// @TODO загружаем контент по новой
+	},
+);
+
+const categories = computed<IProductCategory[]>(() =>
+	data.value ? data.value.filter((v) => v.products.length) : [],
+);
 </script>
 <template>
 	<UiContainer class="mt-5">
@@ -28,7 +43,7 @@ const { t } = useI18n();
 
 	<div class="sticky top-0 bg-white py-5 shadow-lg shadow-black/5">
 		<UiContainer class="flex items-center justify-between">
-			<ProductCategoriesFeed :categories="data" />
+			<ProductCategoriesFeed :categories="categories" />
 		</UiContainer>
 	</div>
 
@@ -42,12 +57,12 @@ const { t } = useI18n();
 
 			<div class="flex-1">
 				<div class="flex flex-col gap-16">
-						<ProductGroupCategory
-							v-for="category in data"
-							:id="category.name"
-							:key="category.id"
-							:category="category"
-						/>
+					<ProductGroupCategory
+						v-for="category in categories"
+						:id="category.name"
+						:key="category.id"
+						:category="category"
+					/>
 				</div>
 			</div>
 		</div>

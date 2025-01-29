@@ -1,27 +1,19 @@
 <script setup lang="ts">
-interface Props {
-	text: string;
-	value: string;
-}
+const id = useId();
 
-// @TODO проверить что работает, тут как надо получать лучше v-for
-
-const id = useId()
-const checked = defineModel<boolean>()
-const { text, value } = defineProps<Props>();
-
+defineProps<{ checked: boolean }>();
+defineEmits<{ 'update:checked': [value: boolean] }>();
 </script>
 <template>
 	<div class="flex items-center space-x-2">
 		<UiCheckbox
 			class="rounded-[8px] w-6 h-6"
 			:id="id"
-			:value="value"
-			v-model="checked"
+			:checked="checked"
+			@update:checked="(v) => $emit('update:checked', v)"
 		/>
 		<label :for="id" class="leading-none cursor-pointer flex-1">
-			{{ text }}
+			<slot></slot>
 		</label>
-		<slot></slot>
 	</div>
 </template>
