@@ -6,6 +6,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev:backend": "npm run start:dev --prefix ../server",
+    "dev:backend:db": "npm run prisma:studio --prefix ../server",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
