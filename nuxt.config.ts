@@ -80,11 +80,6 @@ export default defineNuxtConfig({
 		baseUrl: 'http://localhost:3000',
 		locales: [
 			{
-				code: 'en',
-				language: 'en-US',
-				file: 'en.json',
-			},
-			{
 				code: 'ru',
 				language: 'ru-RU',
 				file: 'ru.json',
