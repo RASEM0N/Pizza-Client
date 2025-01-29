@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import ProductFilterCheckbox from './ProductFilterCheckbox.vue';
-import { useIngredientsFilter } from '../model/useIngredientsFilter';
+import { useIngredientsSearch } from '../model/useIngredientsSearch';
+import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
 
 const { t } = useI18n();
 const { limit = 6 } = defineProps<{ limit?: number }>();
-const { showAll, searchValue, items, showItems, toggleSelectItem, selectedItems } =
-	useIngredientsFilter({
-		limit,
-	});
+
+const { showAll, showItems, ingredients, searchValue } = useIngredientsSearch(limit);
+const { has, toggle } = useRouteQueryArray({ queryName: 'ingredients' });
 </script>
 <template>
 	<div>
@@ -25,15 +25,15 @@ const { showAll, searchValue, items, showItems, toggleSelectItem, selectedItems 
 			<ProductFilterCheckbox
 				v-for="item in showItems"
 				:key="item.id"
-				:checked="selectedItems.has(item.id)"
-				@update:checked="toggleSelectItem(item.id)"
+				:checked="has(item.id)"
+				@update:checked="toggle(item.id)"
 			>
 				{{ item.name }}
 			</ProductFilterCheckbox>
 		</div>
 
 		<div
-			v-if="items.length > limit"
+			v-if="ingredients.length > limit"
 			:class="{
 				'border-t border-t-neutral-100 mt-4': showAll,
 			}"
