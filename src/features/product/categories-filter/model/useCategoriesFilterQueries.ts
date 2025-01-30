@@ -45,7 +45,7 @@ const queryValuesToNormalizedCategoryValues = (
 	) as QueriesAsValues;
 };
 
-export const useCategoryQueries = () => {
+export const useCategoriesFilterQueries = () => {
 	const route = useRoute();
 
 	const normalizedValues = reactive<QueriesAsValues>(

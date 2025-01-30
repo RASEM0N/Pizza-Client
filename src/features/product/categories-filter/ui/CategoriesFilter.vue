@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ProductFilterIngredients from './ProductFilterIngredients.vue';
-import ProductFilterTypes from './ProductFilterTypes.vue';
-import ProductFilterSizes from './ProductFilterSizes.vue';
-import ProductFilterPrice from './ProductFilterPrice.vue';
+import CategoriesFilterIngredients from './CategoriesFilterIngredients.vue';
+import CategoriesFilterTypes from './CategoriesFilterTypes.vue';
+import CategoriesFilterSizes from './CategoriesFilterSizes.vue';
+import CategoriesFilterPrice from './CategoriesFilterPrice.vue';
 
 // @TODO
 // - все числовые значения должны приходить с бэка
@@ -22,9 +22,9 @@ const { t } = useI18n();
 			{{ t('product_filter.name') }}
 		</UiTitle>
 
-		<ProductFilterSizes class="mb-5" />
-		<ProductFilterTypes class="mb-5" />
-		<ProductFilterPrice class="mb-5" />
-		<ProductFilterIngredients :limit="6" />
+		<CategoriesFilterSizes class="mb-5" />
+		<CategoriesFilterTypes class="mb-5" />
+		<CategoriesFilterPrice class="mb-5" />
+		<CategoriesFilterIngredients :limit="6" />
 	</div>
 </template>

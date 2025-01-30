@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProductFilterCheckbox from './ProductFilterCheckbox.vue';
+import CategoriesFilterCheckbox from './CategoriesFilterCheckbox.vue';
 import { useIngredientsSearch } from '../model/useIngredientsSearch';
 import { CATEGORY_QUERY } from '../model/const';
 import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
@@ -23,14 +23,14 @@ const { has, toggle } = useRouteQueryArray({ queryName: CATEGORY_QUERY.ingredien
 		</div>
 
 		<div class="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
-			<ProductFilterCheckbox
+			<CategoriesFilterCheckbox
 				v-for="item in showItems"
 				:key="item.id"
 				:checked="has(item.id)"
 				@update:checked="toggle(item.id)"
 			>
 				{{ item.name }}
-			</ProductFilterCheckbox>
+			</CategoriesFilterCheckbox>
 		</div>
 
 		<div

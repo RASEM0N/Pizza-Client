@@ -5,14 +5,14 @@ import {
 	ProductCategoriesFeed,
 } from '~/src/features/product/categories-group';
 import {
-	ProductFilter,
-	useCategoryQueries,
+	CategoriesFilter,
+	useCategoriesFilterQueries,
 } from '~/src/features/product/categories-filter';
 import { Stories } from '~/src/widgets/stories';
 import { $apiFetch } from '~/src/shared/api';
 
 const { t } = useI18n();
-const { queries } = useCategoryQueries();
+const { queries } = useCategoriesFilterQueries();
 const { data } = await useAsyncData<IProductCategory[]>(
 	'categories',
 	() => $apiFetch('/api/category', { query: queries.value }),
@@ -43,7 +43,7 @@ const categories = computed<IProductCategory[]>(() =>
 	<UiContainer class="mt-10 pb-14">
 		<div class="flex gap-[80px]">
 			<div class="w-[250px]">
-				<ProductFilter />
+				<CategoriesFilter />
 			</div>
 
 			<div class="flex-1">

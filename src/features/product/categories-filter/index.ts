@@ -1,6 +1,6 @@
-export { useCategoryQueries } from './model/useCategoryQueries';
+export { useCategoriesFilterQueries } from './model/useCategoriesFilterQueries';
 
-export { default as ProductFilter } from './ui/ProductFilter.vue';
-export { default as ProductFilterIngredients } from './ui/ProductFilterIngredients.vue';
-export { default as ProductFilterSizes } from './ui/ProductFilterSizes.vue';
-export { default as ProductFilterTypes } from './ui/ProductFilterTypes.vue';
+export { default as CategoriesFilter } from './ui/CategoriesFilter.vue';
+export { default as CategoriesFilterIngredients } from './ui/CategoriesFilterIngredients.vue';
+export { default as CategoriesFilterSizes } from './ui/CategoriesFilterSizes.vue';
+export { default as CategoriesFilterTypes } from './ui/CategoriesFilterTypes.vue';
