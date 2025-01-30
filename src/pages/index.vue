@@ -4,27 +4,20 @@ import {
 	ProductCategoriesGroup,
 	ProductCategoriesFeed,
 } from '~/src/features/product/categories-group';
-import { ProductFilter } from '~/src/features/product/categories-filter';
-import { useApiFetch } from '~/src/shared/api';
+import {
+	ProductFilter,
+	useCategoryQueries,
+} from '~/src/features/product/categories-filter';
 import { Stories } from '~/src/widgets/stories';
-
-// @TODO проверить что загружается на бэке
-// сюда еще body на основе текущего query надо передавать
+import { $apiFetch } from '~/src/shared/api';
 
 const { t } = useI18n();
-const route = useRoute();
-
-// @TODO чето не изменяется
-const { data } = await useApiFetch<IProductCategory[]>('/api/category', {
-	query: {
-		ingredients: route.query.ingredients,
-	},
-});
-
-watch(
-	() => route.query,
-	(value, prevValue) => {
-		// @TODO загружаем контент по новой
+const { queries } = useCategoryQueries();
+const { data } = await useAsyncData<IProductCategory[]>(
+	'categories',
+	() => $apiFetch('/api/category', { query: queries.value }),
+	{
+		watch: [queries],
 	},
 );
 

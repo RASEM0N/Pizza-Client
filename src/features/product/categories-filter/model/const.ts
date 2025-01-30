@@ -5,5 +5,6 @@ export enum CATEGORY_QUERY {
 	ingredients = 'ingredients',
 	sizes = 'sizes',
 	types = 'types',
-	price = 'price',
+	priceFrom = 'priceFrom',
+	priceTo = 'priceTo',
 }
