@@ -11,11 +11,15 @@ export const queryToPositiveInt = (query: string): number => {
 	return parseInt(query) >= 0 ? number : 0;
 };
 
-export const queryToArrayNaturalInt = (query: string): number[] => {
+export const queryToArrayInt = (query: string): number[] => {
 	return query
 		? query
 				.split(',')
 				.map((v) => queryToPositiveInt(v))
 				.filter((v) => v)
 		: [];
+};
+
+export const queryToArrayNaturalInt = (query: string): number[] => {
+	return queryToArrayInt(query).map((v) => v);
 };

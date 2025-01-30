@@ -1,11 +1,15 @@
 import { useRouteQuery } from '~/src/shared/lib/useRouteQuery';
+import { arrayToQuery, queryToArrayInt } from '~/src/shared/lib/normalizedQuery';
 
 type QueryValue = string | number;
 type Params = { queryName: string };
 
 export const useRouteQueryArray = ({ queryName }: Params) => {
-	const values = reactive(new Set<QueryValue>([]));
-	const query = computed(() => [...values.values()].join(','));
+	const route = useRoute();
+	const values = reactive(
+		new Set<QueryValue>(queryToArrayInt(route.query[queryName] as string)),
+	);
+	const query = computed(() => arrayToQuery([...values.values()]));
 
 	const select = (value: QueryValue, add: boolean) => {
 		add ? values.add(value) : values.delete(value);
