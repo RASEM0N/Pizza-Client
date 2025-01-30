@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import ProductFilterCheckbox from './ProductFilterCheckbox.vue';
 import { useIngredientsSearch } from '../model/useIngredientsSearch';
-import { INGREDIENTS_QUERY } from '../model/const';
+import { CATEGORY_QUERY } from '../model/const';
 import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
 
 const { t } = useI18n();
 const { limit = 6 } = defineProps<{ limit?: number }>();
 
 const { showAll, showItems, ingredients, searchValue } = useIngredientsSearch(limit);
-const { has, toggle } = useRouteQueryArray({ queryName: INGREDIENTS_QUERY });
+const { has, toggle } = useRouteQueryArray({ queryName: CATEGORY_QUERY.ingredients });
 </script>
 <template>
 	<div>
