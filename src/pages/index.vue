@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { type IProductCategory, ProductGroupCategory } from '~/src/entities/product';
-import { ProductFilter } from '~/src/features/product/filter';
+import { type IProductCategory } from '~/src/entities/product';
+import {
+	ProductCategoriesGroup,
+	ProductCategoriesFeed,
+} from '~/src/features/product/categories-group';
+import { ProductFilter } from '~/src/features/product/categories-filter';
 import { useApiFetch } from '~/src/shared/api';
 import { Stories } from '~/src/widgets/stories';
-import {
-	ProductCategoriesFeed,
-
-	// @TODO Работает через очко на бэке
-	// ProductIntersectionCategories,
-} from '~/src/features/product/categories-feed';
 
 // @TODO проверить что загружается на бэке
 // сюда еще body на основе текущего query надо передавать
@@ -57,7 +55,7 @@ const categories = computed<IProductCategory[]>(() =>
 
 			<div class="flex-1">
 				<div class="flex flex-col gap-16">
-					<ProductGroupCategory
+					<ProductCategoriesGroup
 						v-for="category in categories"
 						:id="category.name"
 						:key="category.id"

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { IProductCategory } from '../model/types';
-import Product from './Product.vue';
+import { type IProductCategory, Product } from '~/src/entities/product';
 
 defineProps<{ category: IProductCategory }>();
 </script>

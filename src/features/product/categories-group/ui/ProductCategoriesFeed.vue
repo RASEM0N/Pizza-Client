@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IProductCategory } from '~/src/entities/product';
-import { useCategoriesFeed } from '../model/store';
+import { useCategoriesFeed } from '../model/useCategoriesFeed';
 
 defineProps<{ categories: IProductCategory[] }>();
 
