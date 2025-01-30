@@ -2,9 +2,10 @@
 import ProductFilterCheckbox from './ProductFilterCheckbox.vue';
 import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
 import { defaultProductSizes } from '~/src/entities/product';
+import { SIZES_QUERY } from '../model/const';
 
 const { t } = useI18n();
-const { has, toggle } = useRouteQueryArray({ queryName: 'sizes' });
+const { has, toggle } = useRouteQueryArray({ queryName: SIZES_QUERY });
 const sizes = computed(() => defaultProductSizes());
 </script>
 <template>

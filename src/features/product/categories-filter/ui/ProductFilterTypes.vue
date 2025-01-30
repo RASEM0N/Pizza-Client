@@ -2,9 +2,10 @@
 import ProductFilterCheckbox from './ProductFilterCheckbox.vue';
 import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
 import { defaultProductTypes } from '~/src/entities/product';
+import { TYPES_QUERY } from '../model/const';
 
 const { t } = useI18n();
-const { has, toggle } = useRouteQueryArray({ queryName: 'pizzaTypes' });
+const { has, toggle } = useRouteQueryArray({ queryName: TYPES_QUERY });
 const types = computed(() => defaultProductTypes());
 </script>
 <template>
