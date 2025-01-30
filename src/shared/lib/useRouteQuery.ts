@@ -11,11 +11,11 @@ export const useRouteQuery = ({ name, query }: Params) => {
 
 	watch(query, (value) => {
 		if (value) {
-			return router.push({ query: { name: value } });
+			return router.push({ query: { ...route.query, [name]: value } });
 		}
 
 		if (route.query[name]) {
-			return router.push({ query: { name: '' } });
+			return router.push({ query: { ...route.query, [name]: '' } });
 		}
 	});
 };
