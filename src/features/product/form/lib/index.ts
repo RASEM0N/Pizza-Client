@@ -1,7 +1,7 @@
 import {
 	type IProductItem,
 	type IProductIngredient,
-	defaultMapProductSizes,
+	defaultMapProductTypes,
 	defaultProductSizes,
 } from '~/src/entities/product';
 
@@ -42,7 +42,7 @@ export const getProductTotalPrice = ({
 export const getProductDetails = (params: GetProductDetailsParams) => {
 	return {
 		totalPrice: getProductTotalPrice(params),
-		priceText: `${params.size} см, ${defaultMapProductSizes()[params.type]} пицца`,
+		priceText: `${params.size} см, ${defaultMapProductTypes()[params.type]} пицца`,
 	};
 };
 
