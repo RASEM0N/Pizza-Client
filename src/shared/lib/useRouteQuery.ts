@@ -1,15 +1,16 @@
-import type { Ref } from 'vue';
+import type { WatchSource } from 'vue';
 
 interface Params {
 	name: string;
-	query: Ref<string>;
+	query: WatchSource<string>;
+	delay?: number;
 }
 
-export const useRouteQuery = ({ name, query }: Params) => {
+export const useRouteQuery = ({ name, query, delay }: Params) => {
 	const route = useRoute();
 	const router = useRouter();
 
-	watch(query, (value) => {
+	const updateQuery = (value: string) => {
 		if (value) {
 			return router.push({ query: { ...route.query, [name]: value } });
 		}
@@ -17,5 +18,9 @@ export const useRouteQuery = ({ name, query }: Params) => {
 		if (route.query[name]) {
 			return router.push({ query: { ...route.query, [name]: undefined } });
 		}
-	});
+	};
+
+	delay
+		? watch(query, useDebounceFn(updateQuery, delay)) //
+		: watch(query, updateQuery);
 };
