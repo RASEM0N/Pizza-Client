@@ -18,6 +18,9 @@ export const useCategoriesFilterPrice = ({ min, max }: Params) => {
 		priceFrom > max || !priceFrom ? max : priceFrom,
 	]);
 
+	// @TODO надо синхронизировать debounce,
+	// либо useRouteQuery дать возможно обрабатывать массивы
+
 	useRouteQuery({
 		name: CATEGORY_QUERY.priceFrom,
 		query: () => String(price.value[1]),
