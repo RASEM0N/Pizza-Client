@@ -15,7 +15,7 @@ export const useRouteQuery = ({ name, query }: Params) => {
 		}
 
 		if (route.query[name]) {
-			return router.push({ query: { ...route.query, [name]: '' } });
+			return router.push({ query: { ...route.query, [name]: undefined } });
 		}
 	});
 };
