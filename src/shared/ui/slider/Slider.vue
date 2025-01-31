@@ -51,7 +51,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 				top: '10px',
 			}"
 		>
-			<span class="text-sm">{{ value }}</span>
+			<span class="text-sm">{{ value || defaultValue[idx] }}</span>
 		</div>
 	</SliderRoot>
 </template>

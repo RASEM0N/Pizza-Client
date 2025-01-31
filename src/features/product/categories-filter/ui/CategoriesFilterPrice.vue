@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { MAX_PRICE, MIN_PRICE } from '../model/const';
-
-// @TODO в процессе
+import { useCategoriesFilterPrice } from '../model/useCategoriesFilterPrice';
+import { MAX_PRICE_FROM, MIN_PRICE_FROM, MIN_PRICE_TO } from '../model/const';
 
 const { t } = useI18n();
-const price = ref([MIN_PRICE, MAX_PRICE]);
+const { price } = useCategoriesFilterPrice({
+	min: MIN_PRICE_TO,
+	max: MAX_PRICE_FROM,
+});
 </script>
 <template>
 	<div class="border-y border-y-neutral-100 py-6 pb-7">
@@ -12,13 +14,24 @@ const price = ref([MIN_PRICE, MAX_PRICE]);
 		<div class="flex gap-3 mb-5">
 			<UiInput
 				type="number"
-				:min="100"
-				:max="30000"
-				placeholder="0"
-				default-value="0"
+				:min="MIN_PRICE_TO"
+				:max="MAX_PRICE_FROM"
+				v-model="price[0]"
 			/>
-			<UiInput type="number" :min="100" :max="30000" placeholder="30000" />
+			<UiInput
+				type="number"
+				:min="MIN_PRICE_FROM"
+				:max="MAX_PRICE_FROM"
+				v-model="price[1]"
+			/>
 		</div>
-		<UiSlider :min="0" :max="5000" :step="10" :model-value="price" />
+		<UiSlider
+			class="w-[250px]"
+			:min="MIN_PRICE_TO"
+			:max="MAX_PRICE_FROM"
+			:step="10"
+      :defaultValue="[MIN_PRICE_TO, MAX_PRICE_FROM]"
+			v-model="price"
+		/>
 	</div>
 </template>
