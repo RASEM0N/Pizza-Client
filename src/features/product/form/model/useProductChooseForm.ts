@@ -7,7 +7,7 @@ import type {
 import { defaultProductTypes } from '~/src/entities/product';
 
 import {
-	type AvailableProductVariant,
+	type ChooseVariant,
 	getAvailableProductItems,
 	getProductDetails,
 } from '../lib';
@@ -23,15 +23,15 @@ export const useProductChooseForm = (product: IProduct) => {
 		)?.id;
 	});
 
-	const availableTypes = computed<AvailableProductVariant[]>(() => {
+	const availableTypes = computed<ChooseVariant[]>(() => {
 		return defaultProductTypes();
 	});
 
-	const availableSizes = computed<AvailableProductVariant[]>(() => {
+	const availableSizes = computed<ChooseVariant[]>(() => {
 		return getAvailableProductItems(type.value, product.items);
 	});
 
-	const availableSize = computed<AvailableProductVariant | undefined>(() => {
+	const availableSize = computed<ChooseVariant | undefined>(() => {
 		return availableSizes.value.find((item) => !item.disabled);
 	});
 

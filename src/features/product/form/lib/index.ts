@@ -5,8 +5,6 @@ import {
 	defaultProductSizes,
 } from '~/src/entities/product';
 
-// @TODO локализация
-
 interface GetProductDetailsParams {
 	type: number;
 	size: number;
@@ -15,8 +13,7 @@ interface GetProductDetailsParams {
 	selectedIngredients: Set<number>;
 }
 
-// @TODO название конечно....
-export interface AvailableProductVariant {
+export interface ChooseVariant {
 	name: string;
 	value: number;
 	disabled?: boolean;
@@ -49,7 +46,7 @@ export const getProductDetails = (params: GetProductDetailsParams) => {
 export const getAvailableProductItems = (
 	pizzaType: number,
 	items: IProductItem[],
-): AvailableProductVariant[] => {
+): ChooseVariant[] => {
 	const availableProducts = items.filter((v) => v.pizzaType === pizzaType);
 	return defaultProductSizes().map((size) => ({
 		...size,

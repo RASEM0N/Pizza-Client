@@ -75,16 +75,9 @@ export default defineNuxtConfig({
 		},
 	],
 	i18n: {
+		vueI18n: './i18n/i18nConfig.ts',
 		strategy: 'prefix_except_default',
-		defaultLocale: 'ru',
 		baseUrl: 'http://localhost:3000',
-		locales: [
-			{
-				code: 'ru',
-				language: 'ru-RU',
-				file: 'ru.json',
-			},
-		],
 	},
 	tailwindcss: {
 		cssPath: 'src/app/style.css',

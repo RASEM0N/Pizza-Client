@@ -3,7 +3,11 @@ import { CartItem, CartItemSkeleton, useCartStore } from '~/src/entities/cart';
 
 const cartStore = useCartStore();
 
-// @TODO добавить обработку loading для кнопок
+// @TODO обработка ошибок и процесса загрузки
+// - загрузка корзины
+// - добавление/уменьшение quantity
+// - удаление товара
+// - обработка ошибок
 </script>
 <template>
 	<UiInfoBlock title="1. Корзина">
@@ -22,8 +26,6 @@ const cartStore = useCartStore();
 				@item:remove="cartStore.updateCart.execute(item.id, item.quantity - 1)"
 				@remove="cartStore.removeCart.execute(item.id)"
 			/>
-
-			<!--@TODO черновой вариант-->
 			<h1 v-else>Empty products in card..</h1>
 		</div>
 	</UiInfoBlock>

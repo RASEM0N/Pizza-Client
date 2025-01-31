@@ -30,7 +30,6 @@ export const getCartDetailDescription = ({
 }: CartDetail) => {
 	const details = [];
 
-	// @todo локализация
 	if (pizzaSize && pizzaType) {
 		const typeName = defaultMapProductTypes()[pizzaType];
 		details.push(`${typeName} ${pizzaSize} см`);

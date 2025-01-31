@@ -2,8 +2,6 @@
 import { useRegisterForm } from '../model/useRegisterForm';
 import type { User } from '~/src/entities/user';
 
-// @todo локализация
-
 const { t } = useI18n();
 const emits = defineEmits<{
 	'success': [user: User];

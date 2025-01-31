@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { AvailableProductVariant } from '../lib';
+import type { ChooseVariant } from '../lib';
 
-defineProps<{ variants: AvailableProductVariant[] }>();
+defineProps<{ variants: ChooseVariant[] }>();
 
-const emits = defineEmits<{ select: [value: AvailableProductVariant] }>();
+const emits = defineEmits<{ select: [value: ChooseVariant] }>();
 const model = defineModel<number, number>();
 
-const select = (variant: AvailableProductVariant) => {
+const select = (variant: ChooseVariant) => {
 	model.value = variant.value;
 	emits('select', variant);
 };

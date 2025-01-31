@@ -8,6 +8,10 @@
 - [@LIBS](https://github.com/RASEM0N/Pizza-Libs)
 
 # Todos
+- обработка ошибок и процесса загрузки
+- 
+
+# Todos
 - Добавить везде обработку Loading и т.д..
 - Loading с учетом гидрации
 - /Profile & /Order запускать без SSR

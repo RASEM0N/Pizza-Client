@@ -1,11 +1,14 @@
 import { object, string } from 'zod';
 
 const properties = () => {
-	// @TODO локализация
-	const { $i18n } = useNuxtApp()
+
+	// @TODO
+	// - минимальная и максимальная длина должна быть еще
+
+	const { $i18n } = useNuxtApp();
 
 	return {
-		email: string().email(),
+		email: string().email($i18n.t('common.validation.enter_email')),
 		fullName: string(),
 		password: string(),
 		confirmPassword: string(),
@@ -18,8 +21,10 @@ export const loginSchema = () => {
 };
 
 export const registerSchema = () => {
+	const { $i18n } = useNuxtApp();
+
 	return object(properties()).refine((data) => data.password === data.confirmPassword, {
-		message: 'Пароли не совпадают',
+		message: $i18n.t('common.validation.passwords_dont_much'),
 		path: ['confirmPassword'],
 	});
 };

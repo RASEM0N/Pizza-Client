@@ -3,14 +3,6 @@ import { useApiFetch } from '~/src/shared/api';
 import { ProductForm } from '~/src/features/product/form';
 import type { IProduct } from '~/src/entities/product';
 
-// @TODO локализация
-// @TODO обработка ошибок
-
-// @TODO по хорошему для этой попапа
-// должна быть еще страница
-// но у параллельного рендера с перехватом нет нормально в Nuxt.
-// Который есть next-pages-plus - работает через одно место
-
 const route = useRoute();
 const { data } = await useApiFetch<IProduct>(`/api/product/${route.params.productId}`);
 

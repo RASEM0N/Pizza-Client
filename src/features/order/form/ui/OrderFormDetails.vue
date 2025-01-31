@@ -3,23 +3,22 @@ import type { OrderPriceDetails } from '~/src/entities/order';
 import { CartItemDetails } from '~/src/entities/cart';
 import { IconPackage, IconPercent, IconTruck } from '#components';
 
-// @TODO локализация
-
+const { t } = useI18n();
 const { details } = defineProps<{ details: OrderPriceDetails }>();
 
 const renderDetails = computed(() => [
 	{
-		text: 'Стоимость корзины:',
+		text: t('order.form_details.cart_price'),
 		icon: IconPackage,
 		value: details.cartPrice,
 	},
 	{
-		text: 'Налоги:',
+		text: t('order.form_details.taxes_price'),
 		icon: IconPercent,
 		value: details.taxesPrice,
 	},
 	{
-		text: 'Доставка:',
+		text: t('order.form_details.delivery_price'),
 		icon: IconTruck,
 		value: details.deliveryPrice,
 	},
@@ -28,10 +27,8 @@ const renderDetails = computed(() => [
 <template>
 	<UiInfoBlock class="p-6 sticky top-4">
 		<div class="flex flex-col gap-1">
-			<span class="text-xl">Итого:</span>
-			<div class="h-11 text-[34px] font-extrabold">
-				{{ details.totalPrice }} ₽
-			</div>
+			<span class="text-xl">{{ t('order.form_details.title') }}</span>
+			<div class="h-11 text-[34px] font-extrabold">{{ details.totalPrice }} ₽</div>
 		</div>
 
 		<CartItemDetails v-for="detail in renderDetails" :key="detail.text">

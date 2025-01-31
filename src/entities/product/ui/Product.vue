@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { IProduct } from '../model/types';
 
-// @todo локализация
-
 const { t } = useI18n();
 const { product } = defineProps<{ product: IProduct }>();
 
