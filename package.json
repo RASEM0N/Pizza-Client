@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "nuxt start",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "dev:backend": "npm run start:dev --prefix ../server",
