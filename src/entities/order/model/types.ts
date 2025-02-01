@@ -1,4 +1,4 @@
-import type { Common } from '~/src/shared/lib/types';
+import type { Common } from '@shared/lib/types';
 
 export enum ORDER_STATUS {
 	pending = 'PENDING',

@@ -1,5 +1,5 @@
 import { toTypedSchema } from '@vee-validate/zod';
-import { type User, loginSchema, useUserStore } from '~/src/entities/user';
+import { type User, loginSchema, useUserStore } from '@entities/user';
 
 interface Params {
 	onError?: (error: unknown) => void;

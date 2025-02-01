@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IProduct, IProductItem } from '~/src/entities/product';
+import type { IProduct, IProductItem } from '@entities/product';
 
 defineProps<{
 	product: IProduct;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IProductIngredient } from '../model/types';
-import { cn } from '~/src/shared/lib/cn';
+import { cn } from '@shared/lib/cn';
 
 defineProps<{ ingredient: IProductIngredient; active?: boolean }>();
 </script>

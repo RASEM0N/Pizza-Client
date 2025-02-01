@@ -1,12 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	ssr: true,
-	compatibilityDate: '2025-01-21',
+	compatibilityDate: '2025-02-02',
+
+
+
+
 	runtimeConfig: {
 		public: {
 			baseUrl: process.env.API_URL,
 		},
 	},
+
 	app: {
 		head: {
 			title: 'Pizza',
@@ -23,17 +28,27 @@ export default defineNuxtConfig({
 		},
 	},
 
-	// @TODO https://nuxt.com/docs/api/nuxt-config
-	alias: {},
+	alias: {
+		'@app': '../src/app/',
+		'@pages': '../src/pages/',
+		'@widgets': '../src/widgets/',
+		'@features': '../src/features/',
+		'@entities': '../src/entities/',
+		'@shared': '../src/shared/',
+	},
+
 	devtools: {
 		enabled: false,
 	},
+
 	typescript: {
 		strict: true,
 	},
+
 	vue: {
 		propsDestructure: true,
 	},
+
 	modules: [
 		'@nuxt/image',
 		'@nuxtjs/i18n',
@@ -47,11 +62,13 @@ export default defineNuxtConfig({
 		'nuxt-snackbar',
 		'nuxt-lucide-icons',
 	],
+
 	dir: {
 		pages: 'src/pages',
 		layouts: 'src/app/layouts',
 		middleware: 'src/app/middleware',
 	},
+
 	components: [
 		{
 			path: 'src/widgets',
@@ -74,14 +91,17 @@ export default defineNuxtConfig({
 			prefix: 'Ui',
 		},
 	],
+
 	i18n: {
 		vueI18n: './i18n/i18nConfig.ts',
 		strategy: 'prefix_except_default',
 		baseUrl: process.env.APP_URL,
 	},
+
 	tailwindcss: {
 		cssPath: 'src/app/style.css',
 	},
+
 	googleFonts: {
 		display: 'swap',
 		prefetch: true,
@@ -91,9 +111,11 @@ export default defineNuxtConfig({
 			Nunito: ['400', '500', '600', '700', '800', '900'],
 		},
 	},
+
 	lucide: {
 		namePrefix: 'Icon',
 	},
+
 	snackbar: {
 		right: true,
 		top: true,

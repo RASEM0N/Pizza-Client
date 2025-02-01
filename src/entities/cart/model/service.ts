@@ -1,7 +1,7 @@
 import type { Cart } from './types';
-import { useAsync } from '~/src/shared/lib/useAsync';
-import { $apiFetch } from '~/src/shared/api';
-import { getCartDetails } from '~/src/entities/cart/lib';
+import { useAsync } from '@shared/lib/useAsync';
+import { $apiFetch } from '@shared/api';
+import { getCartDetails } from '@entities/cart/lib';
 
 export const useCartStore = defineStore('cart', () => {
 	const cart = ref<Cart>();

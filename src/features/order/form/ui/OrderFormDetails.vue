@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { OrderPriceDetails } from '~/src/entities/order';
-import { CartItemDetails } from '~/src/entities/cart';
+import type { OrderPriceDetails } from '@entities/order';
+import { CartItemDetails } from '@entities/cart';
 import { IconPackage, IconPercent, IconTruck } from '#components';
 
 const { t } = useI18n();

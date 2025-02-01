@@ -3,7 +3,7 @@ import {
 	type IProductIngredient,
 	defaultMapProductTypes,
 	defaultProductSizes,
-} from '~/src/entities/product';
+} from '@entities/product';
 
 interface GetProductDetailsParams {
 	type: number;

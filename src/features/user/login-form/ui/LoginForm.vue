@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useLoginForm } from '../model/useLoginForm';
-import type { User } from '~/src/entities/user';
+import type { User } from '@entities/user';
 
 const { t } = useI18n();
 const emits = defineEmits<{

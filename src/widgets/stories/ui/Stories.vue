@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useApiFetch } from '~/src/shared/api';
-import type { Story } from '~/src/entities/story';
+import { useApiFetch } from '@shared/api';
+import type { Story } from '@entities/story';
 
 const { data } = useApiFetch<Story[]>('/api/story');
 

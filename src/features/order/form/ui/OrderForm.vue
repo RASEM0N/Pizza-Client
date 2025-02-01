@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useOrderForm } from '../model/useOrderForm';
-import { useCartStore } from '~/src/entities/cart';
+import { useCartStore } from '@entities/cart';
 
 import OrderFormCarts from './OrderFormCarts.vue';
 import OrderFormPersonal from './OrderFormPersonal.vue';

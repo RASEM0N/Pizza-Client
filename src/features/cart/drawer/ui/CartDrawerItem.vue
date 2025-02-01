@@ -5,8 +5,8 @@ import {
 	CartItemCountButton,
 	CartItemPrice,
 	type CartDetail,
-} from '~/src/entities/cart';
-import { getCartDetailDescription } from '~/src/entities/cart/lib';
+} from '@entities/cart';
+import { getCartDetailDescription } from '@entities/cart/lib';
 
 const emits = defineEmits(['item:add', 'item:remove', 'remove']);
 const { item, disabled } = defineProps<{ item: CartDetail; disabled?: boolean }>();

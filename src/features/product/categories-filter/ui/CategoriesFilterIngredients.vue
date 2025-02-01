@@ -2,7 +2,7 @@
 import CategoriesFilterCheckbox from './CategoriesFilterCheckbox.vue';
 import { useIngredientsSearch } from '../model/useIngredientsSearch';
 import { CATEGORY_QUERY } from '../model/const';
-import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
+import { useRouteQueryArray } from '@shared/lib/useRouteQueryArray';
 
 const { t } = useI18n();
 const { limit = 6 } = defineProps<{ limit?: number }>();

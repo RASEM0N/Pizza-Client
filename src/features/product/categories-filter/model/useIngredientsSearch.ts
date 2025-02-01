@@ -1,6 +1,6 @@
-import { useAsync } from '~/src/shared/lib/useAsync';
-import { $apiFetch } from '~/src/shared/api';
-import type { IProductIngredient } from '~/src/entities/product';
+import { useAsync } from '@shared/lib/useAsync';
+import { $apiFetch } from '@shared/api';
+import type { IProductIngredient } from '@entities/product';
 
 export const useIngredientsSearch = (limit: number) => {
 	const showAll = ref(false);

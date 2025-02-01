@@ -1,6 +1,6 @@
 import type { User } from './types';
-import { useAsync } from '~/src/shared/lib/useAsync';
-import { $apiFetch } from '~/src/shared/api';
+import { useAsync } from '@shared/lib/useAsync';
+import { $apiFetch } from '@shared/api';
 
 export const useUserStore = defineStore('user', () => {
 	const user = ref<User>();

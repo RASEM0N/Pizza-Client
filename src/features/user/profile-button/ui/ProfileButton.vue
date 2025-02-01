@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { AuthModal } from '~/src/widgets/auth-modal';
+import { AuthModal } from '@widgets/auth-modal';
 
-import { useUserStore } from '~/src/entities/user';
-import { FETCH_STATUS } from '~/src/shared/lib/types';
+import { useUserStore } from '@entities/user';
+import { FETCH_STATUS } from '@shared/lib/types';
 
 // @TODO
 // - Auth - это widget

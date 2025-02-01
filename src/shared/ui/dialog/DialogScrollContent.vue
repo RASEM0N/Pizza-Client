@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '~/src/shared/lib/cn'
+import { cn } from '@shared/lib/cn'
 import { X } from 'lucide-vue-next'
 import {
   DialogClose,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { OrderForm } from '~/src/features/order/form';
+import { OrderForm } from '@features/order/form';
 
 definePageMeta({ layout: 'without-search' });
 </script>

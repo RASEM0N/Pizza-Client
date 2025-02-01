@@ -1,5 +1,5 @@
-import { type Cart, useCartStore } from '~/src/entities/cart';
-import type { IProduct } from '~/src/entities/product';
+import { type Cart, useCartStore } from '@entities/cart';
+import type { IProduct } from '@entities/product';
 
 interface Params {
 	product: IProduct;

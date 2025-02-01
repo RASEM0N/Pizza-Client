@@ -1,5 +1,5 @@
-import type { Common } from '~/src/shared/lib/types';
-import type { Cart, CartItem } from '~/src/entities/cart/@x';
+import type { Common } from '@shared/lib/types';
+import type { Cart, CartItem } from '@entities/cart/@x';
 
 export interface IProduct extends Common {
 	name: string;

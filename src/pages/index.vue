@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { type IProductCategory } from '~/src/entities/product';
+import { type IProductCategory } from '@entities/product';
 import {
 	ProductCategoriesGroup,
 	ProductCategoriesFeed,
-} from '~/src/features/product/categories-group';
+} from '@features/product/categories-group';
 import {
 	CategoriesFilter,
 	useCategoriesFilterQueries,
-} from '~/src/features/product/categories-filter';
-import { Stories } from '~/src/widgets/stories';
-import { $apiFetch } from '~/src/shared/api';
+} from '@features/product/categories-filter';
+import { Stories } from '@widgets/stories';
+import { $apiFetch } from '@shared/api';
 
 const { t } = useI18n();
 const { queries } = useCategoriesFilterQueries();

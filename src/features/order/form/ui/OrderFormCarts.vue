@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CartItem, CartItemSkeleton, useCartStore } from '~/src/entities/cart';
+import { CartItem, CartItemSkeleton, useCartStore } from '@entities/cart';
 
 const cartStore = useCartStore();
 

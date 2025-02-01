@@ -1,6 +1,6 @@
-import { CATEGORY_QUERY } from '~/src/features/product/categories-filter/model/const';
-import { useRouteQuery } from '~/src/shared/lib/useRouteQuery';
-import { queryToPositiveInt } from '~/src/shared/lib/normalizedQuery';
+import { useRouteQuery } from '@shared/lib/useRouteQuery';
+import { queryToPositiveInt } from '@shared/lib/normalizedQuery';
+import { CATEGORY_QUERY } from '../model/const';
 
 interface Params {
 	min: number;

@@ -4,7 +4,7 @@ import {
 	numberToQuery,
 	queryToArrayNaturalInt,
 	queryToPositiveInt,
-} from '~/src/shared/lib/normalizedQuery';
+} from '@shared/lib/normalizedQuery';
 
 type Queries = {
 	[key in CATEGORY_QUERY]: string;

@@ -2,7 +2,7 @@
 import ProductFormVariants from './ProductFormVariants.vue';
 import ProductSizeImg from './ProductSizeImg.vue';
 import { useProductChooseForm } from '../model/useProductChooseForm';
-import { type IProduct, ProductIngredient } from '~/src/entities/product';
+import { type IProduct, ProductIngredient } from '@entities/product';
 
 // @TODO 20 30 40 в константы надо вынести
 // - и в компосайбе useProductChooseForm тоже поменять

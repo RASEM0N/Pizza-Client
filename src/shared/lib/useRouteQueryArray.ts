@@ -1,5 +1,5 @@
-import { useRouteQuery } from '~/src/shared/lib/useRouteQuery';
-import { arrayToQuery, queryToArrayInt } from '~/src/shared/lib/normalizedQuery';
+import { useRouteQuery } from '@shared/lib/useRouteQuery';
+import { arrayToQuery, queryToArrayInt } from '@shared/lib/normalizedQuery';
 
 type QueryValue = string | number;
 type Params = { queryName: string };

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CartDrawer from './CartDrawer.vue';
-import { useCartStore } from '~/src/entities/cart';
-import { FETCH_STATUS } from '~/src/shared/lib/types';
+import { useCartStore } from '@entities/cart';
+import { FETCH_STATUS } from '@shared/lib/types';
 
 const cartStore = useCartStore();
 </script>

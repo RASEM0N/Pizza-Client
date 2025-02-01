@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { SearchProducts } from '~/src/features/product/search';
-import { CartDrawerButton } from '~/src/features/cart/drawer';
-import { ProfileButton } from '~/src/features/user/profile-button';
+import { SearchProducts } from '@features/product/search';
+import { CartDrawerButton } from '@features/cart/drawer';
+import { ProfileButton } from '@features/user/profile-button';
 
 const { t } = useI18n();
 const { hasCart = true, hasSearch = true } = defineProps<{

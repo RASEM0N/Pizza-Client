@@ -1,6 +1,6 @@
-import type { Common } from '~/src/shared/lib/types';
-import type { Cart } from '~/src/entities/cart/@x';
-import type { Order } from '~/src/entities/order/@x';
+import type { Common } from '@shared/lib/types';
+import type { Cart } from '@entities/cart/@x';
+import type { Order } from '@entities/order/@x';
 
 export enum USER_ROLE {
 	user = 'USER',

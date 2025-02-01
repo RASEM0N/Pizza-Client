@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useUserStore } from '~/src/entities/user';
+import { useUserStore } from '@entities/user';
 import ProfileFormLoaded from './ProfileFormLoaded.vue';
 import ProfileFormLoading from './ProfileFormLoading.vue';
-import { FETCH_STATUS } from '~/src/shared/lib/types';
+import { FETCH_STATUS } from '@shared/lib/types';
 
 const userStore = useUserStore();
 onMounted(() => userStore.me.executeIfNone());

@@ -1,8 +1,8 @@
-import type { Common } from '~/src/shared/lib/types';
+import type { Common } from '@shared/lib/types';
 import type {
 	IProductIngredient,
 	IProductItem,
-} from '~/src/entities/product/@x';
+} from '@entities/product/@x';
 
 export interface Cart extends Common {
 	token: string;

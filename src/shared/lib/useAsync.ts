@@ -1,4 +1,4 @@
-import { FETCH_STATUS } from '~/src/shared/lib/types';
+import { FETCH_STATUS } from '@shared/lib/types';
 import type { Ref } from 'vue';
 
 // @TODO

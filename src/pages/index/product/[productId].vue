@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useApiFetch } from '~/src/shared/api';
-import { ProductForm } from '~/src/features/product/form';
-import type { IProduct } from '~/src/entities/product';
+import { useApiFetch } from '@shared/api';
+import { ProductForm } from '@features/product/form';
+import type { IProduct } from '@entities/product';
 
 const route = useRoute();
 const { data } = await useApiFetch<IProduct>(`/api/product/${route.params.productId}`);

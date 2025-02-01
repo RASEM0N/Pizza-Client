@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useProfileForm } from '../model/useProfileForm';
-import { type User, useUserStore } from '~/src/entities/user';
+import { type User, useUserStore } from '@entities/user';
 
 const { t } = useI18n();
 const useStore = useUserStore();

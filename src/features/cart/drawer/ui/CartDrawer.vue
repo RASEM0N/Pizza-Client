@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCartStore } from '~/src/entities/cart';
+import { useCartStore } from '@entities/cart';
 import CartDrawerItem from './CartDrawerItem.vue';
 // @TODO
 // - разнести по компонентам

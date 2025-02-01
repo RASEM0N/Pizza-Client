@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CategoriesFilterCheckbox from './CategoriesFilterCheckbox.vue';
-import { useRouteQueryArray } from '~/src/shared/lib/useRouteQueryArray';
-import { defaultProductSizes } from '~/src/entities/product';
+import { useRouteQueryArray } from '@shared/lib/useRouteQueryArray';
+import { defaultProductSizes } from '@entities/product';
 import { CATEGORY_QUERY } from '../model/const';
 
 const { t } = useI18n();

@@ -1,10 +1,10 @@
-import { type OrderPriceDetails, orderSchema } from '~/src/entities/order';
+import { type OrderPriceDetails, orderSchema } from '@entities/order';
 
 import { toTypedSchema } from '@vee-validate/zod';
-import { useUserStore } from '~/src/entities/user';
-import { useCartStore } from '~/src/entities/cart';
-import { useAsync } from '~/src/shared/lib/useAsync';
-import { $apiFetch } from '~/src/shared/api';
+import { useUserStore } from '@entities/user';
+import { useCartStore } from '@entities/cart';
+import { useAsync } from '@shared/lib/useAsync';
+import { $apiFetch } from '@shared/api';
 
 // @TODO чето перегруженный какой-то
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { IProduct } from '~/src/entities/product';
-import type { Cart } from '~/src/entities/cart';
+import type { IProduct } from '@entities/product';
+import type { Cart } from '@entities/cart';
 import { useProductForm } from '../model/useProductForm';
 
 // @TODO название компоненты бэд

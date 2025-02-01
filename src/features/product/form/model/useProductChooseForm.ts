@@ -2,9 +2,9 @@ import type {
 	DefaultProductSize,
 	DefaultProductType,
 	IProduct,
-} from '~/src/entities/product';
+} from '@entities/product';
 
-import { defaultProductTypes } from '~/src/entities/product';
+import { defaultProductTypes } from '@entities/product';
 
 import {
 	type ChooseVariant,

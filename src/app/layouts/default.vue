@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Header } from '~/src/widgets/Header';
-import { useUserStore } from '~/src/entities/user';
-import { useCartStore } from '~/src/entities/cart';
+import { Header } from '@widgets/Header';
+import { useUserStore } from '@entities/user';
+import { useCartStore } from '@entities/cart';
 
 const { hasCart = true, hasSearch = true } = defineProps<{
 	hasCart?: boolean;
