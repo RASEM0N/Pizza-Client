@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 	compatibilityDate: '2025-01-21',
 	runtimeConfig: {
 		public: {
-			baseUrl: 'http://localhost:5000',
+			baseUrl: process.env.API_URL,
 		},
 	},
 	app: {
@@ -77,7 +77,7 @@ export default defineNuxtConfig({
 	i18n: {
 		vueI18n: './i18n/i18nConfig.ts',
 		strategy: 'prefix_except_default',
-		baseUrl: 'http://localhost:3000',
+		baseUrl: process.env.APP_URL,
 	},
 	tailwindcss: {
 		cssPath: 'src/app/style.css',
