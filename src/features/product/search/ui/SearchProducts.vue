@@ -1,20 +1,16 @@
 <script setup lang="ts">
-
 import type { IProduct } from '@entities/product';
+import { $apiFetch } from '@shared/api';
 
 const query = ref('');
 const focused = ref(false);
 const products = ref<IProduct[]>([]);
 
-// @TODO надо протестировать
-
 const target = ref<HTMLElement | null>(null);
-
 const router = useRouter();
 const search = useDebounceFn(async () => {
-	// @TODO привет гонка
-	// @TODO ссылка полная
-	products.value = await $fetch<IProduct[]>('http://localhost:5000/api/product', {
+	// @TODO привет рейс кондишин
+	products.value = await $apiFetch<IProduct[]>('/api/product', {
 		query: { query: query.value },
 	});
 }, 500);
@@ -30,7 +26,7 @@ const selectItem = async (product: IProduct) => {
 	router.push({ path: `/product/${product.id}` });
 
 	// обнуляем после выбора
-	focused.value = false
+	focused.value = false;
 	query.value = '';
 	products.value = [];
 };
