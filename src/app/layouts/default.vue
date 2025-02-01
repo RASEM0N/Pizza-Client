@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { Header } from '@widgets/Header';
 import { useUserStore } from '@entities/user';
 import { useCartStore } from '@entities/cart';
+
+// импорт не @widgets - ибо тогда ломается в Docker-е
+// и почему-то только в этом месте 😗
+import { Header } from '../../widgets/header';
 
 const { hasCart = true, hasSearch = true } = defineProps<{
 	hasCart?: boolean;
