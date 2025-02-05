@@ -8,8 +8,6 @@ const emits = defineEmits<{
 	'error': [error: unknown];
 }>();
 
-const v = ref(ref(0))
-
 const { submit, fields, loading } = useLoginForm({
 	onError: (error) => emits('error', error),
 	onSuccess: (user) => emits('success', user),
